@@ -1,0 +1,1297 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR (REVISED FOR CENTERED TITLE) ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 18px 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo + Title */
+nav .logo .nav-title {
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); 
+}
+
+nav .logo .nav-title:hover {
+  color: #0078ff;
+  transform: scale(1.02);
+}
+
+/* Nav links */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px; 
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #0078ff;
+  transform: scale(1.05);
+}
+
+nav {
+  padding: 15px 80px;
+}
+
+/* ===== MENU TOGGLE (MOBILE) ===== */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===== SWIPER / HERO SECTION ===== */
+.carousel-section {
+  margin-top: 90px;
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  height: 85vh; /* default for desktop/large screens */
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Image styling */
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Slide title */
+.slide-title {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/* Wrapper for image + timeline + button */
+.slide-image-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* so timeline + button sit near bottom */
+}
+
+/* Timeline overlay on the image, just above button */
+.slide-timeline-small {
+  position: absolute;
+  bottom: 60px;      /* 10px above the button */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;      /* length of the bar */
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  overflow: hidden;
+  z-index: 5;
+}
+
+/* Timeline progress */
+.slide-progress-small {
+  width: 0%;
+  height: 100%;
+  background: #0078ff;
+  border-radius: 2px;
+  transition: width 0.3s linear;
+}
+
+/* Button styling */
+.view-more-btn {
+  position: absolute;
+  bottom: 20px;      /* leave enough space for timeline */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;        /* above timeline */
+  background: #0078ff;
+  color: #fff;
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  background: #005fcc;
+}
+
+/* Optional: limit image width for better layout */
+.slide-image-wrap img {
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+}
+
+
+/* keep buttons on top of the image */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #fff;
+  z-index: 10;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* ===== CONTACT SECTION ===== */
+.contact-section {
+  padding: 20px 20px 80px;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2.0rem;
+  margin-bottom: 10px;
+}
+
+.contact-section p {
+  font-size: 1.0rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Large desktop screens (1200px - 1599px) */
+@media (min-width: 1200px) and (max-width: 1599px) {
+  nav {
+    padding: 25px 120px;  /* slightly reduced */
+  }
+
+  nav .logo {
+    margin-right: 15%;    /* reduced spacing */
+  }
+
+  nav .logo .nav-title {
+    font-size: 4rem;      /* smaller than 5rem */
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+
+  nav ul li a {
+    font-size: 1.8rem;    /* smaller than 2.2rem */
+    font-weight: 600;
+    margin: 0 20px;
+  }
+
+  .slide-title {
+    font-size: 2.5rem;    /* slightly smaller */
+    top: 60px;
+    letter-spacing: 2px;
+  }
+
+  .view-more-btn {
+    font-size: 1.2rem;
+    padding: 12px 30px;
+    bottom: 20px;
+  }
+
+  .contact-section h2 {
+    font-size: 3rem;      /* slightly smaller */
+  }
+
+  .contact-section p {
+    font-size: 1.8rem;    /* slightly smaller */
+  }
+
+  .slide-timeline-small {
+    width: 200px;         /* smaller but visible */
+    height: 6px;          /* slightly thinner */
+    bottom: 90px;         /* maintains space above button */
+  }
+}
+
+/* Extra-large / ultra-wide screens (1600px and above) */
+@media (min-width: 1200px) {
+  nav {
+    padding: 30px 150px;
+  }
+
+  nav .logo {
+    margin-right: 18%;
+  }
+
+  nav .logo .nav-title {
+    font-size: 3.0rem;    /* reduce slightly from 5rem */
+  }
+
+  nav ul li a {
+    font-size: 2rem;
+    margin: 0 22px;
+  }
+
+  .slide-title {
+    font-size: 2.8rem;
+  }
+
+  .contact-section h2 {
+    font-size: 3.2rem;
+  }
+
+  .contact-section p {
+    font-size: 1.9rem;
+  }
+
+  .slide-timeline-small {
+    width: 220px;
+    height: 7px;
+    bottom: 95px;
+  }
+
+  .view-more-btn {
+    font-size: 1.4rem;
+    padding: 14px 35px;
+    bottom: 20px;
+  }
+}
+/* Medium screens / tablets */
+@media (min-width: 992px) and (max-width: 1199px) {
+  nav {
+    padding: 25px 100px;
+  }
+
+  nav .logo {
+    margin-right: 15%;
+  }
+
+  nav .logo .nav-title {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  nav ul li a {
+    font-size: 1.15rem;
+    margin: 0 20px;
+  }
+
+  .slide-title {
+    font-size: 2.5rem;
+  }
+
+  .view-more-btn {
+    font-size: 1.1rem;
+    padding: 10px 28px;
+  }
+
+  .contact-section h2 {
+    font-size: 2.3rem;
+  }
+
+  .slide-timeline-small {
+  bottom: 60px;      /* timeline above button */
+  }
+
+  .view-more-btn {
+    bottom: 20px;      /* button at bottom */
+  }
+}
+
+/* Small screens / phones */
+/* Small screens (phones) */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 30px;
+    justify-content: space-between;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    width: 100%;
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav .logo .nav-title {
+    font-size: 1.85rem;
+  }
+
+  .contact-section h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-section p {
+    font-size: 0.8rem;
+  } 
+
+  /* Slide title adapts to container width */
+  .slide-title {
+    font-size: 1.55rem;
+    max-width: 90%;      /* prevents wrapping by limiting width */
+    white-space: nowrap;  /* force single line */
+    overflow: hidden;     /* hide any overflow */
+    text-overflow: ellipsis; /* optional: shows … if too long */
+  }
+
+  .view-more-btn {
+    font-size: 0.9rem;
+    padding: 8px 18px;
+  }
+
+  .swiper {
+    width: 100%;
+    height: 70vh;
+    position: relative;
+  }
+
+  .swiper-slide img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 100%;    /* prevents stretching beyond container */
+    height: 100%;
+    max-height: 100%;   /* ensures it fits container */
+    object-fit: contain;
+    object-position: center;
+    border-radius: 10px;
+  }
+
+  .slide-content {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .slide-timeline {
+    height: 4px;
+  }
+}
+/* ===== MOBILE MENU OPEN/CLOSE ANIMATION ===== */
+/* ===== NAVBAR BASE ===== */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* logo left, menu right */
+  padding: 18px 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+/* Logo + Title */
+nav .logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+nav .logo .nav-title {
+  font-family: 'Playfair Display', serif; 
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: #333;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav .logo .nav-title:hover {
+  color: #0078ff;
+  transform: scale(1.02);
+}
+
+/* Nav links (desktop/medium screens) */
+nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: #0078ff;
+  transform: scale(1.05);
+}
+
+/* ===== MENU TOGGLE (HAMBURGER) ===== */
+.menu-toggle {
+  display: none; /* only show on small screens */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===== RESPONSIVE NAVBAR ===== */
+
+/* Small screens (phones/tablets) */
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 25px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    max-height: 0;        /* collapsed */
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.4s ease;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  nav ul.show {
+    max-height: 500px; /* adjust if you have more menu items */
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  nav ul li {
+    opacity: 0;
+    transform: translateY(-15px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+
+  nav ul.show li {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Staggered animation for each item */
+  nav ul.show li:nth-child(1) { transition-delay: 0.05s; }
+  nav ul.show li:nth-child(2) { transition-delay: 0.15s; }
+  nav ul.show li:nth-child(3) { transition-delay: 0.30s; }
+  nav ul.show li:nth-child(4) { transition-delay: 0.50s; }
+  nav ul.show li:nth-child(5) { transition-delay: 0.70s; }
+  nav ul.show li:nth-child(6) { transition-delay: 0.90s; }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav .logo .nav-title {
+    font-size: 1.5rem;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+}
+
+/* Medium screens / tablets */
+@media (min-width: 769px) and (max-width: 1199px) {
+  nav {
+    padding: 20px 60px;
+  }
+
+  nav .logo .nav-title {
+    font-size: 2.2rem;
+  }
+
+  nav ul li a {
+    font-size: 1.15rem;
+  }
+}
+
+/* Large screens / desktops */
+@media (min-width: 1200px) {
+  nav {
+    padding: 25px 120px;
+  }
+
+  nav .logo .nav-title {
+    font-size: 3.0rem;
+  }
+
+  nav ul li a {
+    font-size: 1.5rem;
+  }
+}
+/* 🔴 YOUTUBE ICON IN NAVBAR */
+.youtube-icon {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.3));
+}
+
+.youtube-icon:hover {
+  transform: scale(1.2);
+}
+
+/* 🔴 YOUTUBE LINK IN CONTACT SECTION */
+.youtube-link {
+  color: #ff0000;
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.youtube-link i {
+  margin-right: 8px;
+  font-size: 1.4rem;
+}
+
+.youtube-link:hover {
+  color: #cc0000;
+  transform: scale(1.05);
+}
+
+/* 🔴 FLOATING YOUTUBE BUTTON */
+.youtube-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  background: #ff0000;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.youtube-float img {
+  width: 35px;
+  height: 35px;
+  display: block;
+}
+
+.youtube-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.4);
+}
+
+.contact-section p {
+  margin-bottom: 15px; /* existing contact text spacing */
+}
+
+.youtube-link {
+  display: inline-block;
+  margin-top: 20px; /* space above the YouTube link */
+}
+
+/* Floating YouTube icon */
+.youtube-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+/* Icon styling */
+.youtube-float img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 2;
+  animation: vibrate 2s infinite ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.youtube-float img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 0, 0, 0.6);
+}
+
+/* Pulse halo using pseudo-element */
+.youtube-float::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: rgba(255, 0, 0, 0.4);
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  animation: wavePulse 2.5s infinite ease-out;
+}
+
+/* Vibrating motion */
+@keyframes vibrate {
+  0%, 100% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+}
+
+/* Visible wave/pulse */
+@keyframes wavePulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(2.5);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+/* Large screen size adjustments */
+@media (min-width: 1200px) {
+  .youtube-float img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .youtube-float::after {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .youtube-link {
+    font-size: 2.5rem;       /* bigger text */
+    padding: 18px 45px;    /* more padding */
+    gap: 18px;             /* space between icon and text */
+  }
+
+  .youtube-link i {
+    font-size: 2.8rem;     /* bigger icon */
+  }
+}
+
+/* Medium screens / tablets - increase YouTube button size */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .youtube-link {
+    font-size: 1.5rem;       /* bigger text for medium screens */
+    padding: 14px 35px;      /* more padding */
+    gap: 14px;               /* space between icon and text */
+  }
+
+  .youtube-link i {
+    font-size: 1.7rem;       /* bigger icon */
+  }
+}
+
+
+/* Medium screens / tablets */
+/* Medium screens / tablets */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .youtube-float img {
+    width: 60px;   /* slightly bigger than default 55px */
+    height: 60px;
+  }
+
+  .youtube-float::after {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+/* Default small screens (mobile menu) */
+nav ul li .youtube-icon {
+  width: 50px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  nav ul li .youtube-icon {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1200px) {
+  nav ul li .youtube-icon {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* NAVBAR FLEX FIX */
+nav {
+  display: flex;
+  align-items: center;      /* vertical centering */
+  justify-content: space-between; /* logo left, menu right */
+  padding: 18px 80px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 1000;
+}
+
+/* Left part: logo + title */
+nav .logo {
+  display: flex;
+  align-items: center;      /* vertically centers logo + YouTube icon */
+  gap: 15px;                /* spacing between title and icon */
+}
+
+/* YouTube icon in nav */
+nav .youtube-icon {
+  width: 28px;               /* adjust as needed */
+  height: 28px;
+  vertical-align: middle;
+  transition: transform 0.3s ease;
+}
+
+/* Nav links */
+nav ul {
+  display: flex;
+  align-items: center;       /* vertical centering */
+  gap: 30px;
+}
+
+/* Menu toggle */
+.menu-toggle {
+  display: none;             /* visible only on small screens */
+  font-size: 1.8rem;
+  align-self: center;        /* vertically center on navbar */
+}
+
+/* MENU TOGGLE (HAMBURGER) */
+.menu-toggle {
+  display: none;           /* hidden on large screens */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #111;
+  align-self: center;      /* vertically center in nav */
+}
+
+/* Show menu toggle on small screens */
+/* Navbar for small screens */
+@media (max-width: 768px) {
+  nav {
+    justify-content: space-between; /* logo left, menu right */
+    padding: 15px 30px;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #111;
+  }
+
+  nav .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* space between logo and YouTube icon */
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.98);
+    padding: 15px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+  }
+
+  nav ul.show {
+    display: flex;
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+/* ===== CONTACT SECTION (Final Polished Responsive Version) ===== */
+.contact-section {
+  padding: 50px 25px;
+  background: #f8fafc;
+  text-align: center;
+  color: #222;
+}
+
+/* Section Heading */
+.contact-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 15px;
+  letter-spacing: 0.5px;
+}
+
+/* Intro text */
+.contact-intro {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.contact-intro span {
+  color: #0078ff;
+  font-weight: 700;
+}
+
+/* Contact items */
+.contact-item {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px; /* consistent spacing between icon and text */
+}
+
+/* Contact links */
+.contact-item a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* space between icon and text */
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #0078ff;
+}
+
+/* Contact icons */
+.contact-icon {
+  font-size: 1.2rem;
+  color: #0078ff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.contact-item a:hover .contact-icon {
+  transform: scale(1.15);
+  color: #005fcc;
+}
+
+/* Divider between phone numbers */
+.divider {
+  color: #aaa;
+  margin: 0 10px;
+}
+
+/* YouTube link */
+.youtube-link {
+  color: #333;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.youtube-link i {
+  color: #ff0000;
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.youtube-link:hover {
+  color: #ff0000;
+  transform: scale(1.05);
+}
+
+.youtube-link:hover i {
+  transform: scale(1.2);
+}
+
+/* ===== SMALL SCREENS ===== */
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 35px 15px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-item {
+    font-size: 0.9rem;
+    gap: 10px; /* slightly reduced */
+  }
+
+  .contact-icon {
+    font-size: 1rem; /* smaller icon */
+  }
+
+  .youtube-link {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .youtube-link i {
+    font-size: 1.1rem;
+  }
+}
+
+/* ===== MEDIUM SCREENS ===== */
+@media (min-width: 769px) and (max-width: 1199px) {
+  .contact-section {
+    padding: 45px 60px;
+  }
+
+  .contact-section h2 {
+    font-size: 1.9rem;
+  }
+
+  .contact-intro {
+    font-size: 1.15rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+    gap: 12px;
+  }
+
+  .contact-icon {
+    font-size: 1.3rem;
+  }
+
+  .youtube-link {
+    font-size: 1.05rem;
+  }
+
+  .youtube-link i {
+    font-size: 1.4rem;
+  }
+}
+
+/* ===== LARGE SCREENS ===== */
+@media (min-width: 1200px) {
+  .contact-section {
+    padding: 60px 120px;
+  }
+
+  .contact-section h2 {
+    font-size: 2.4rem;
+  }
+
+  .contact-intro {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+  }
+
+  .contact-item {
+    font-size: 1.2rem;
+    gap: 18px; /* more breathing space */
+  }
+
+  .contact-icon {
+    font-size: 1.8rem; /* larger icons for desktops */
+  }
+
+  .youtube-link {
+    font-size: 2.0rem;
+    gap: 12px;
+  }
+
+  .youtube-link i {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+/* ---------------------------------------------- */
+
+/* ===== DROPDOWN MENU ===== */
+nav ul li.dropdown {
+  position: relative;
+}
+
+nav ul li .dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  min-width: 200px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border-radius: 6px;
+  z-index: 100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Dropdown links */
+nav ul li .dropdown-content li a {
+  display: block;
+  padding: 10px 20px;
+  font-weight: 500;
+  color: #222;
+}
+
+nav ul li .dropdown-content li a:hover {
+  background: #0078ff;
+  color: #fff;
+  border-radius: 4px;
+}
+
+/* SHOW DROPDOWN ON HOVER - LARGE SCREENS ONLY */
+@media (min-width: 1200px) {
+  nav ul li.dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+  }
+  nav ul li .dropdown-content li a {
+    font-size: 1.6rem;       /* bigger text */
+    padding: 14px 30px;      /* more clickable area */
+    min-width: 300px;   
+  }
+
+   nav ul li .dropdown-content {
+    padding-bottom: 15px; /* adjust as needed */
+  }
+
+}
+
+/* HIDE DROPDOWN ON SMALL AND MEDIUM SCREENS */
+@media (max-width: 1199px) {
+  nav ul li .dropdown-content {
+    display: none !important;
+    opacity: 0 !important;
+  }
+}
+
+
+.main-courses {
+  padding: 80px 40px;
+  background: #fdf6ff;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.main-courses h1 {
+  font-size: 2.8rem;
+  margin-bottom: 50px;
+  color: #2a2a2a;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Grid with 4 per row on large screens */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 35px;
+  justify-items: center;
+}
+
+/* Course card */
+.course-card {
+  position: relative;
+  width: 560px;
+  height: 460px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Image dark overlay */
+.course-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.4)
+  );
+  transition: background 0.3s ease;
+  z-index: 0;
+}
+
+/* Hover zoom + lighting */
+.course-card:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.course-card:hover::before {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.6)
+  );
+}
+
+/* Frosted glass text box */
+.course-card span {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+  padding: 10px 15px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover glow effect on text box */
+.course-card:hover span {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.05);
+}
+
+/* Desktop: 4 columns */
+@media (min-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .course-card {
+    width: 250px;
+    height: 200px;
+  }
+
+  .course-card span {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .course-card {
+    width: 220px;
+    height: 160px;
+  }
+
+  .course-card span {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
