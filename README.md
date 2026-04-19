@@ -84,4 +84,4 @@ Tej Arts & Crafts Institute
 📜 License
 
 This project is open for educational and personal use.
-© 2025 Tej Arts & Crafts Institute. All rights reserved.
+© 2026 Tej Arts & Crafts Institute. All rights reserved.
